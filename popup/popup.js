@@ -1,11 +1,14 @@
-const poop = document.getElementById("poop");
+var poop= document.getElementById("poop");
 if (poop) {
   poop.onclick = function() {
     // do something
-    console.log("pee");
     const element = document.createElement('p');
-    element.id = `1`;
-    element.innerText = `POOP`;
-    document.body.appendChild(element);
+    element.id = `url`;
+    chrome.tabs.query({currentWindow: true, active: true}, function(tabs) {
+      var tab = tabs[0].url;
+      console.log(tab)
+      element.innerText = tab;
+      document.body.appendChild(element);
+    });
   };
 }
