@@ -14,6 +14,16 @@ if (poop){
       if(tab.substring(0,30)=="https://www.bing.com/search?q="){
         element.innerText = filter(tab);
       }
+      if(document.getElementById("google").checked){
+        chrome.tabs.create({
+          url: ("https://www.google.com/search?q=" + tab)
+        });
+      }
+      if(document.getElementById("bing").checked){
+        chrome.tabs.create({
+          url: tabs[0].url
+        });
+      }
     });
   }
 }
