@@ -15,7 +15,7 @@ if (poop){
         element.innerText = filter(tab);
       }
     });
-  };
+  }
 }
 function filter(taburl){
   var ss=30;
